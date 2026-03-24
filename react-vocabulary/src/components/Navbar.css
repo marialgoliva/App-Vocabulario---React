@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    height: 60px;
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 0.5rem;
+        align-items: center;
+        svg {
+            color: var(--secondary-color);
+        }
+    }
+
+    .miProfile {
+        width: fit-content;
+    }
+}

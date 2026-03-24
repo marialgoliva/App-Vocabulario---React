@@ -1,0 +1,36 @@
+.mainContainer {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  
+  div {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    width: 100%;
+
+    .wordForm {
+      background-color: var(--primary-color);
+      flex: 1;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 1px -1px 7px #d8d8d8;
+      height: fit-content;
+    }
+
+    .quizForm {
+      background-color: var(--primary-color);
+      flex: 2;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 1px -1px 7px #d8d8d8;
+      height: fit-content;
+    }
+  }
+
+  /* La zona de la izquierda (Formulario) */
+
+}
