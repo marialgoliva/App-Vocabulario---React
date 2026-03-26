@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './components/Navbar';
 import WordForm from './components/WordForm';
+import QuizCard from './components/QuizCard';
 
 function App() {
 
@@ -12,9 +13,7 @@ function App() {
           <section className="wordForm">
             <WordForm></WordForm>
           </section>
-          <section className="quizForm">
-            <h1>Formulario de Quiz</h1>
-          </section>
+            <QuizCard></QuizCard>
         </div>
       </main>
     </>

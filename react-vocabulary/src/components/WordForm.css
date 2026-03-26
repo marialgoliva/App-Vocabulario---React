@@ -17,18 +17,19 @@ form {
             border: 0.1rem solid #ccc;
             font-family: 'Lexend';        }
 
-        button {          margin-top: 1rem;
-            padding: 0.5rem;
+        button {    
+            font-family: Lexend, sans-serif;
+            font-weight: 400;      margin-top: 1rem;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 0.25rem;
+            border-radius: 0.5rem;
             background-color: var(--secondary-color);
             color: var(--primary-color);
             font-size: 1rem;
             cursor: pointer;
-                &:hover {
-                    background-color: #a14e3a;
-
-        }
+            &:hover {
+                transform: scale(1.05);
+            }
     }
 
 

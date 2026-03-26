@@ -1,0 +1,118 @@
+.quizForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .quizTitle {
+        padding: 1rem;
+    }
+
+    .changeLanguage {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+
+        div {
+            flex-direction: row;
+            justify-content: center;
+            width: fit-content;
+            background-color: var(--background-color);
+            border-radius: 0.5rem;
+            padding: 0.2rem;
+            gap: 0px;
+
+            button {
+                background-color: inherit;
+                color: var(--text-secondary);
+                font-family: Lexend;
+                padding: 0.5rem;
+                border-radius: 0.5rem;
+                border: none;
+                font-weight: 600;
+                text-align: center;
+
+                &:first-child {
+                    background-color: #fcece8;
+                    color: var(--secondary-color);
+                }
+            }
+        }
+    }
+
+    .quizWord {
+        background-color: var(--background-color);
+        width: fit-content;
+        justify-content: center;
+        padding: 3rem 6rem;
+        min-width: 300px;
+        border-radius: 0.5rem;
+    }
+
+    input {
+        min-width: 300px;
+        padding: 0.5rem;
+        border-radius: 0.3em;
+        border: 1.5px solid #bcbcbc;
+        background-color: var(--background-color);
+        font-family: Lexend, sans-serif;
+        text-align: center;
+    }
+
+    .contador {
+        color: var(--text-secondary);
+        font-weight: 500;
+        min-width: max-content;
+        padding: 0;
+        justify-content: center;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &:first-child svg {
+                color: green
+            }
+
+            &:last-child svg {
+                color: red
+            }
+
+            span {
+                color: var(--text-color);
+            }
+        }
+    }
+
+    .quizSubmit {
+
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0;
+
+
+        button {
+
+            background-color: var(--background-secondary);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-family: Lexend, sans-serif;
+            font-size: 1rem;
+            &:first-child{
+                background-color: var(--secondary-color);
+                color: var(--primary-color);
+            }
+
+            cursor: pointer;
+             &:hover {
+                transform: scale(1.05);
+             }
+
+        }
+        
+    }
+
+}
