@@ -1,7 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./QuizCard.css";
 
+const getRandomWord = (wordsList, setQuizWord, quizWord) => {
+
+    console.log('wordsList DENTRO :>> ', wordsList);
+        
+        if (wordsList.length === 0) return;
+
+        if (wordsList.length === 1) {
+        setQuizWord(wordsList[0]);
+        return;
+        }
+        let randomIndex;
+
+        
+        
+        do {
+            randomIndex = Math.floor(Math.random() * wordsList.length);
+            
+        } while (quizWord && wordsList[randomIndex].english === quizWord.english);
+
+        
+
+        setQuizWord(wordsList[randomIndex]);
+    };
+
 export default function QuizCard() {
+
+    const [quizWord, setQuizWord] = React.useState(null);
+    const [wordsList, ] = React.useState(() => {
+        const savedWords = localStorage.getItem("wordsList");
+        return savedWords ? JSON.parse(savedWords) : [];
+    });
+
+    console.log('wordsList :>> ', wordsList);
+
+
+    
+
+    useEffect(() => {
+            if (wordsList.length > 0 && !quizWord) {
+            getRandomWord(wordsList, setQuizWord, quizWord);
+        }
+        
+    },[wordsList, quizWord]);
+
+    useEffect(() => {
+        localStorage.setItem("wordsList", JSON.stringify(wordsList));
+    }, []);
+
     return (
         <div className="quizForm">
             <h2 className="quizTitle">What is the translation?</h2>
@@ -14,7 +61,7 @@ export default function QuizCard() {
                 <p>What is the meaning of ...?</p>
             </div>
             <div className="quizWord">
-                <h3>Word</h3>
+                {quizWord && <h3>{quizWord.english}</h3>}
             </div>
             <input className="answer" type="text" placeholder="Enter translation..." />
             <div className="contador">
@@ -24,7 +71,7 @@ export default function QuizCard() {
             </div>
             <div className="quizSubmit">
                 <button>Check</button>
-                <button>Next Word</button>
+                <button onClick={() => getRandomWord(wordsList, setQuizWord, quizWord)}>Next Word</button>
             </div>
 
         </div>
