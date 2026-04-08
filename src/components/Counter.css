@@ -1,0 +1,26 @@
+    .counter {
+        display: flex;
+        color: var(--text-secondary);
+        font-weight: 500;
+        min-width: max-content;
+        padding: 0;
+        justify-content: center;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            &:first-child svg {
+                color: green
+            }
+
+            &:last-child svg {
+                color: red
+            }
+
+            span {
+                color: var(--text-color);
+            }
+        }
+    }

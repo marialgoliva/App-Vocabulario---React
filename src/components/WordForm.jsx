@@ -12,7 +12,6 @@ export default function WordForm() {
 
     useEffect(() => {
         localStorage.setItem("wordsList", JSON.stringify(wordsList));
-        console.log('wordsList :>> ', wordsList);
     }, [wordsList]);
 
 
