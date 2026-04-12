@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import "./WordForm.css";
 import Alert from "./Alert";
 
-export default function WordForm() {
+export default function WordForm({wordsList, setWordsList }) {
 
     const [englishWord, setEnglishWord] = useState("");
     const [spanishWord, setSpanishWord] = useState("");
-    const [wordsList, setWordsList] = useState(() => {
-        const savedWords = localStorage.getItem("wordsList");
-        return savedWords ? JSON.parse(savedWords) : [];
-    });
+    // const [wordsList, setWordsList] = useState(() => {
+    //     const savedWords = localStorage.getItem("wordsList");
+    //     return savedWords ? JSON.parse(savedWords) : [];
+    // });
     const [alert, setAlert] = useState(null);
 
     useEffect(() => {
@@ -42,8 +42,8 @@ export default function WordForm() {
 
     return (
 
-        <>
-        <form action="" onSubmit={(e) => handleSubmit(e)} className="wordForm">
+        <section className="wordForm">
+        <form action="" onSubmit={(e) => handleSubmit(e)}>
             <h2>Add New Word</h2>
             <div className={`formContent `}>
                 <label htmlFor="englishWord">English Word:</label>
@@ -58,7 +58,7 @@ export default function WordForm() {
             </div>
         </form>
         {alert && <Alert type={alert.type} message={alert.message} />}
-        </>
+        </section>
     )
 
 

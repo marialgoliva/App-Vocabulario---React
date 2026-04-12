@@ -26,18 +26,14 @@ const getRandomWord = (wordsList, setQuizWord, quizWord, setUserAnswer, setFeedb
     setFeedback("");
 };
 
-export default function QuizCard() {
+export default function QuizCard({ wordsList, learned, setLearned }) {
 
     const [quizWord, setQuizWord] = React.useState(null);
-    const [wordsList,] = React.useState(() => {
-        const savedWords = localStorage.getItem("wordsList");
-        return savedWords ? JSON.parse(savedWords) : [];
-    });
     const [userAnswer, setUserAnswer] = useState("");
     const [feedback, setFeedback] = useState("");
     const [correctHits, setCorrectHits] = useState([]);
-    const [learned, setLearned] = useState([]);
     const toLearnWords = wordsList.filter(word => !learned.includes(word.english));
+    console.log('toLearnWords :>> ', toLearnWords);
 
     const checkAnswer = () => {
         if (!quizWord) return;
@@ -50,6 +46,7 @@ export default function QuizCard() {
             });
             if (newNumber === 3) {
                 setLearned(prev => [...prev, quizWord.english]);
+                localStorage.setItem("learned", JSON.stringify([...learned, quizWord.english]));
             }
             if (toLearnWords.length === 1) {
                 setQuizWord(null);
@@ -86,14 +83,14 @@ export default function QuizCard() {
             }
         }
 
-    }, [wordsList, quizWord]);
+    }, [wordsList, quizWord, toLearnWords]);
 
     useEffect(() => {
         localStorage.setItem("wordsList", JSON.stringify(wordsList));
-    }, []);
+    }, [wordsList]);
 
     return (
-        <div className="quizForm">
+        <section className="quizForm">
             <h2 className="quizTitle">What is the translation?</h2>
             <div className="changeLanguage">
                 {/* Componente botones */}
@@ -125,6 +122,6 @@ export default function QuizCard() {
                 <button onClick={() => getRandomWord(toLearnWords, setQuizWord, quizWord, setUserAnswer, setFeedback)}>Next Word</button>
             </div>
 
-        </div>
+        </section>
     );
 }

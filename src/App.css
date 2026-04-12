@@ -9,13 +9,12 @@
     display: flex;
     gap: 2rem;
     padding: 2rem;
-    max-width: 1200px;
     width: 100%;
 
     .wordForm {
       background-color: var(--primary-color);
       flex: 1;
-      padding: 2rem;
+      padding: 4rem;
       border-radius: 0.5rem;
       box-shadow: 1px -1px 7px #d8d8d8;
       height: fit-content;
@@ -24,7 +23,7 @@
     .quizForm {
       background-color: var(--primary-color);
       flex: 2;
-      padding: 2rem;
+      padding: 4rem;
       border-radius: 0.5rem;
       box-shadow: 1px -1px 7px #d8d8d8;
       height: fit-content;
@@ -32,8 +31,29 @@
       flex-direction: column;
       align-items: center;
     }
-  }
 
-  /* La zona de la izquierda (Formulario) */
+    .listCard {
+      background-color: var(--primary-color);
+      flex: 1;
+      padding: 4rem;
+      border-radius: 0.5rem;
+      box-shadow: 1px -1px 7px #d8d8d8;
+      height: fit-content;
+    }
+
+    .listsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      section:first-child {
+        background-color: #fcece8;
+        color: var(--secondary-color);
+      }
+      section:last-child {
+        color: var(--text-secondary);
+      }
+    }
+  }
 
 }
