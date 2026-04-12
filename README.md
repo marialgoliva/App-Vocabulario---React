@@ -35,4 +35,4 @@ Made for personal learning and practice. 🤓
 
 # 📚 My Vocabulary App
 
-[![Netlify Status][![Netlify Status](https://api.netlify.com/api/v1/badges/d2db1fe1-95dc-4253-8538-d2d5e3270f85/deploy-status)](https://app.netlify.com/projects/learnvocabulario/deploys)
+[![Netlify Status][![Netlify Status](https://api.netlify.com/api/v1/badges/d2db1fe1-95dc-4253-8538-d2d5e3270f85/deploy-status)][(https://app.netlify.com/projects/learnvocabulario/deploys)](https://learnvocabulario.netlify.app/)
